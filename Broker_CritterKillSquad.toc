@@ -1,0 +1,11 @@
+## Interface: 40300
+## Title: Broker: Critter Kill Squad
+## Notes: Displays progres towards the Critter Kill Squad achievement in your LDB
+## Author: Jippen
+## Version: 1.0
+## X-Category: Miscellaneous
+## X-Curse-Packaged-Version: r1
+
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+
+Broker_CritterKillSquad.lua
