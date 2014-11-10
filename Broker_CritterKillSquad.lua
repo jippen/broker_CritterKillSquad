@@ -1,15 +1,12 @@
-local progress = GetStatistic(5144)
-
-local FORCE_UPDATE = 100
+local FORCE_UPDATE = 2
 local counter = 0
-local delay = 1
 
 local CritterKillSquad = CreateFrame("Frame")
 CritterKillSquad.obj = LibStub("LibDataBroker-1.1"):NewDataObject("Broker_CritterKillSquad", {
 	type = "data source",
 	icon = "Interface\\Icons\\Ability_Hunter_Aspectofthefox",
 	label = "Critters to Kill",
-	text  = progress,
+	text  = "?",
 	
 	OnClick = function(self, btn)
 		CritterKillSquad:OnUpdate(FORCE_UPDATE)
@@ -18,8 +15,18 @@ CritterKillSquad.obj = LibStub("LibDataBroker-1.1"):NewDataObject("Broker_Critte
 
 function CritterKillSquad:OnUpdate(elapsed)
 	counter = counter + elapsed
-	if counter >= delay then
-		self.obj.text = GetStatistic(5144)
+	if counter >= FORCE_UPDATE then
+		-- Load Critter Kill Squad
+		_, _, completed, _, _, _, _, _, quantityString, _ = GetAchievementCriteriaInfo(5144, 1);
+		if completed then
+			-- Load Crittergeddon
+			_, _, completed, _, _s, _, _, _, quantityString, _ = GetAchievementCriteriaInfo(5263, 1);
+			if completed then 
+				self.obj.text = "Done"
+				return 
+			end
+		end
+		self.obj.text = quantityString 
 		counter = 0
 	end
 end

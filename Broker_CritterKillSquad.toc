@@ -1,10 +1,14 @@
-## Interface: 40300
+## Interface: 60000
 ## Title: Broker: Critter Kill Squad
-## Notes: Displays progres towards the Critter Kill Squad achievement in your LDB
+## Notes: Displays progress towards the Critter Kill Squad achievement in your LDB
 ## Author: Jippen
-## Version: 1.0
+## Version: 1.1
 ## X-Category: Miscellaneous
-## X-Curse-Packaged-Version: r1
+## X-Curse-Packaged-Version: r2
+## X-Curse-Packaged-Version: v1.1
+## X-Curse-Project-Name: Broker_CritterKillSquad
+## X-Curse-Project-ID: broker_critterkillsquad
+## X-Curse-Repository-ID: wow/broker_critterkillsquad/mainline
 
 libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
 
